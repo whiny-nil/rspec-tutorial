@@ -7,7 +7,7 @@ module Codebreaker
 
     def start(code)
       @code = code
-      @output.puts "Welcome to Codebreaker"
+      @output.puts "Welcome to Codebreaker!"
       @output.puts "Enter guess:"
     end
 

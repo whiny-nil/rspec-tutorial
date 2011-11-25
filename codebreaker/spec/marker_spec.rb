@@ -60,6 +60,13 @@ module Codebreaker
           marker.inexact_match_count.should == 1
         end
       end
+
+      context "with one exact match duplicated in guess" do
+        it "returns 0" do
+          marker = Marker.new('1234', '1134')
+          marker.inexact_match_count.should == 0
+        end
+      end
     end
 
   end

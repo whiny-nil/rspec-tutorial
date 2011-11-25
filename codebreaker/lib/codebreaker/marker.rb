@@ -21,9 +21,20 @@ module Codebreaker
     end
 
     def inexact_match_count
-      (0..3).inject(0) do |count, index|
-        count + (inexact_match?(index) ? 1 : 0)
+      total_match_count - exact_match_count
+    end
+
+    def total_match_count
+      count = 0
+      code = @code.split ''
+      guess = @guess.split ''
+      guess.map do |n|
+        if code.include? n
+          code.delete_at(code.index(n))
+          count += 1
+        end
       end
+      count
     end
 
   end
